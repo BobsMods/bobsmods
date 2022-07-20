@@ -315,7 +315,7 @@ data:extend(
     energy_required = 1,
     ingredients =
     {
-      {type="fluid", name="water", amount=20},
+      {type="fluid", name="water", amount=10},
       {type="fluid", name="nitrogen-dioxide", amount=20},
     },
     results=
