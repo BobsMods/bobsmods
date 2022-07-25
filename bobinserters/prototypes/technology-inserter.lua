@@ -1,3 +1,14 @@
+-- advanced_requirment is the technology that More Inserters 2 and Long Inserters 2 will require  
+local advanced_requirment = "logistics-3" -- default requirment should be Logistics 3
+
+-- if neither of these are present then Logistics 3 will require purple science
+if not (mods["boblogistics"] or mods["bobtech"]) then 
+
+	-- if this is the case we change the requirment to Inserter Capacity Bonus 3
+	advanced_requirment = "inserter-capacity-bonus-3"
+end
+
+
 if not data.raw.technology["long-inserters-1"] then
 data:extend(
 {
@@ -43,7 +54,7 @@ data:extend(
     prerequisites =
     {
       "long-inserters-1",
-      "logistics-3",
+      advanced_requirment,
     },
     unit =
     {
@@ -53,7 +64,6 @@ data:extend(
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
         {"chemical-science-pack", 1},
-        {"production-science-pack", 1}
       },
       time = 15
     },
@@ -139,7 +149,7 @@ data:extend(
     prerequisites =
     {
       "more-inserters-1",
-      "logistics-3",
+      advanced_requirment,
     },
     unit =
     {
@@ -149,7 +159,6 @@ data:extend(
         {"automation-science-pack", 1},
         {"logistic-science-pack", 1},
         {"chemical-science-pack", 1},
-        {"production-science-pack", 1}
       },
       time = 15
     },
